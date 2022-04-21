@@ -1,4 +1,5 @@
 require("dotenv").config({ path: "./config.env" });
+require("./models/db");
 const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
@@ -8,6 +9,7 @@ const mainRoute = require("./routes/index");
 const app = express();
 
 // Middlewares
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("tiny"));
 app.use("/dist", express.static("./dist/"));
