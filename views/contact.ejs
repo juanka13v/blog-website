@@ -1,26 +1,44 @@
 <%- include('./includes/header.ejs') %>
 
-<div class="contact-container">
-  <div class="title-text">
-    <h4>Contact Me</h4>
+<main class="container">
+  <div class="title">
+    <h3>Contact</h3>
   </div>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos saepe numquam
-    excepturi consectetur assumenda molestiae reiciendis quae quasi doloribus
-    laudantium! Quis in vero sequi aperiam distinctio. Sint sequi fugiat ipsam
-    quam esse! Magni incidunt maiores, debitis nemo accusamus officia
-    praesentium quam adipisci culpa? Quasi earum nostrum voluptate rerum! Porro
-    odit quae nesciunt tempora a maiores ducimus maxime adipisci soluta?
-    Repudiandae culpa magni, repellat nisi nemo eaque accusantium reiciendis
-    dolorum sit neque assumenda expedita obcaecati rerum sint nam est, fugit
-    ipsa odio asperiores nihil! Ullam earum quisquam illo quidem incidunt
-    minima! Temporibus adipisci repellat aspernatur nulla dignissimos, vero
-    soluta architecto vitae amet ab, ea optio tenetur nisi eius asperiores
-    facere, pariatur enim quis? Alias distinctio voluptatum deserunt harum
-    expedita nobis minus impedit ab molestiae repellat, debitis quos blanditiis
-    veritatis ex, porro nostrum ullam nam exercitationem illum amet dolorem
-    commodi libero. Quasi exercitationem odio molestiae fugit, cum ex
-    consequatur natus expedita voluptatum.
-  </p>
-</div>
+
+  <div class="contact">
+    <form class="contact-form">
+      <div class="form-field">
+        <label for="">Name:</label>
+        <input type="text" placeholder="Enter your name" />
+      </div>
+      <div class="form-field">
+        <label for="">email:</label>
+        <input type="text" placeholder="Enter your email" />
+      </div>
+      <div class="form-field">
+        <label for="">Asunto:</label>
+        <input type="text" placeholder="Enter subject" />
+      </div>
+      <div class="form-field">
+        <label for="">Message:</label>
+        <textarea cols="30" rows="10"></textarea>
+      </div>
+      <button class="btn">Enviar</button>
+    </form>
+
+    <div class="contact-content">
+      <div class="contact-logo">
+        <i class="bx bx-envelope"></i>
+      </div>
+      <div class="contact-text">
+        <h3>If you want to contact us</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
+          non ullam. Quas minus vel voluptates!
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
 <%- include('./includes/footer.ejs') %>

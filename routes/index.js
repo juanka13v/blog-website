@@ -1,41 +1,33 @@
-const Post = require("../models/Post");
-
 const route = require("express").Router();
+const { home, about, contact, dashboard } = require("../controllers/mainController");
 
-route.get("/", function (req, res) {
-  res.render("home");
-});
+route.get("/", home);
+route.get("/about", about);
+route.get("/contact", contact);
+route.get("/dashboard", dashboard);
 
-route.get("/about", function (req, res) {
-  res.render("about");
-});
+// route.get("/makepost", function (req, res) {
+//   res.render("makepost");
+// });
 
-route.get("/contact", function (req, res) {
-  res.render("contact");
-});
+// route.get("/posts/:titlepost", function (req, res) {
+//   res.render("posts");
+// });
 
-route.get("/makepost", function (req, res) {
-  res.render("makepost");
-});
+// route.post("/", async (req, res) => {
+//   const title = req.body.postTitle;
+//   const description = req.body.postDescription;
 
-route.get("/posts/:titlepost", function (req, res) {
-  res.render("posts");
-});
+//   if (title !== "" && description !== "") {
+//     let post = new Post({
+//       postTitle: req.body.postTitle,
+//       postDescription: req.body.postDescription,
+//     });
 
-route.post("/", async (req, res) => {
-  const title = req.body.postTitle;
-  const description = req.body.postDescription;
-
-  if (title !== "" && description !== "") {
-    let post = new Post({
-      postTitle: req.body.postTitle,
-      postDescription: req.body.postDescription,
-    });
-
-    await post.save();
-  } else {
-    res.render("makepost", { title, description });
-  }
-});
+//     await post.save();
+//   } else {
+//     res.render("makepost", { title, description });
+//   }
+// });
 
 module.exports = route;

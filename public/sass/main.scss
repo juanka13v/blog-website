@@ -1,0 +1,12 @@
+// Variables
+@import "variables";
+
+// Configuración inicial
+@import "init";
+
+// Importa todos tus archivos y componentes aquí
+@import "components/header";
+@import "components/footer";
+@import "components/contact";
+@import "components/about";
+@import "components/dashboard";
