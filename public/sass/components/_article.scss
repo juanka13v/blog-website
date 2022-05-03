@@ -1,0 +1,107 @@
+.post {
+    border: 2px solid $color-black;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    max-width: 500px;
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+        vertical-align: text-bottom;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            color: $color-gray;
+        }
+
+        span:nth-child(2) {
+            margin-right: 15px;
+        }
+
+        i {
+            color: $color-gray;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+    }
+
+    .post-body {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 1rem;
+            font-size: 14px;
+            color: $color-gray;
+            font-weight: 400;
+        }
+
+    }
+
+    .post-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .user {
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 22px;
+                margin-right: 6px;
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: 500;
+                color: $color-black;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $color-gray;
+
+                    &:hover {
+                        color: $color-black;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+        .tags {
+            display: flex;
+            align-items: center;
+            
+            i {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 600;
+                color: $color-gray;
+                margin-right: 8px;
+                cursor: pointer;
+
+
+                &:hover {
+                    color: $color-black;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+}

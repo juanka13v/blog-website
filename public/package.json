@@ -1,0 +1,21 @@
+{
+  "name": "blog-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "server": "live-server --host=localhost --port=3000",
+    "sass": "node-sass -w sass/ -o css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanka13v/blog-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanka13v/blog-ui/issues"
+  },
+  "homepage": "https://github.com/juanka13v/blog-ui#readme"
+}

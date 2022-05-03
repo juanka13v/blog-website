@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Blog UI</title>
+  </head>
+  <body>
+    <header class="container">
+      <div class="logo">
+        <h2>
+          <i class="bx bxs-zap"></i>
+          Blogs News
+        </h2>
+      </div>
+      <div class="menu-icon" id="btn-menu">
+        <i class="bx bx-menu"></i>
+      </div>
+      <div class="menu" id="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <button class="btn"><a href="/dashboard.html">Dashboard</a></button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="title-container">
+      <div class="title">
+        <h3>Dashboard</h3>
+      </div>
+      <div class="nav-title">
+        <p><a href="#">Home</a></p>
+        <i class='bx bx-chevron-right'></i>
+        <p class="active">Dashboard</p>
+      </div>      
+    </div>
+
+
+    <main class="container">
+
+      <div class="dashboard">
+        <form>
+          <div class="form-field">
+            <label>Title :</label>
+            <input type="text" placeholder="Enter a title" />
+          </div>
+          <div class="form-field">
+            <label>Description :</label>
+            <input type="text" placeholder="Enter a description" />
+          </div>
+          <div class="form-field">
+            <label>Markdown :</label>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Enter a markdown sintax"
+            ></textarea>
+          </div>
+
+          <button class="btn">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="container footer">
+      <div class="copyright">
+        <h4><i class="bx bx-copyright"></i> All rights reserved.</h4>
+      </div>
+      <div class="links">
+        <ul>
+          <li>Navigation</li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="social-links">
+        <ul>
+          <li>
+            <a href=""><i class="bx bxl-github"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bx bxl-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bx bxl-linkedin-square"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bx bx-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

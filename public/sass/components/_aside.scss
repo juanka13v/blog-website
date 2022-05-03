@@ -1,0 +1,30 @@
+aside {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      padding: 8px 10px;
+      a {
+        text-decoration: none;
+        color: $color-black;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          border-bottom: 2px solid $color-black;
+        }
+
+        i {
+          font-size: 1.2rem;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}

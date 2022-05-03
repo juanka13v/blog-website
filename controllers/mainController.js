@@ -14,9 +14,14 @@ const dashboard = (req, res) => {
   res.render("dashboard");
 };
 
+const post = (req, res) => {
+  res.render("post");
+};
+
 module.exports = {
   home,
   about,
   contact,
-  dashboard
+  dashboard,
+  post
 };

@@ -1,0 +1,45 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+
+  .title {
+    width: max-content;
+    h3 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid $color-black;
+    }
+  }
+
+  .nav-title {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      margin-right: 2px;
+
+      a {
+        text-decoration: none;
+        color: $color-black;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          border-bottom: 2px solid $color-black;
+        }
+      }
+
+      &.active {
+        font-weight: 600;
+        color: $color-gray;
+        cursor: default;
+      }
+    }
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
