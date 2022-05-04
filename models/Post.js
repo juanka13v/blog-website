@@ -18,6 +18,9 @@ const postSchema = Schema({
     type: String,
     required: true,
   },
+  min: {
+    type: Number
+  },
   author: {
     type: Schema.Types.ObjectId,
     ref: "Author",

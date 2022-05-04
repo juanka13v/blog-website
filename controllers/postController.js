@@ -2,7 +2,7 @@ const Post = require("../models/Post");
 
 const getPost = async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const post = await Post.findById(req.params.id).populate("author");
     res.status(200).json({ msg: "good", post: post });
   } catch (e) {
     res.status(500).json({ msg: "error", error: e });
@@ -20,7 +20,6 @@ const getAllPost = async (req, res) => {
 
 const createPost = async (req, res) => {
   const newPost = new Post(req.body);
-  console.log(req.body);
 
   try {
     const savePost = await newPost.save();

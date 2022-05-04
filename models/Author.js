@@ -1,11 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const authorSchema = Schema({
-  nameAuthor: {
-    type: String,
-    required: true,
-  },
-  img: {
+  author: {
     type: String,
     required: true,
   },
@@ -17,11 +13,6 @@ const authorSchema = Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "Post",
-    },
-  ],
-  socials: [
-    {
-      type: String,
     },
   ],
 });
