@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 const mainRoute = require("./routes/index");
 const postRoute = require("./routes/postRoute");
 const authorRoute = require("./routes/authorRoute");
+const categoryRoute = require("./routes/categoryRoute");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.set("view engine", "ejs");
 app.use("/", mainRoute);
 app.use("/", postRoute);
 app.use("/", authorRoute);
+app.use("/", categoryRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
