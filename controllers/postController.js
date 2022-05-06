@@ -1,4 +1,5 @@
 const Post = require("../models/Post");
+const { formatDate } = require("../helpers/changeDate");
 
 const getPost = async (req, res) => {
   try {
@@ -12,6 +13,10 @@ const getPost = async (req, res) => {
 const getAllPost = async (req, res) => {
   try {
     const posts = await Post.find();
+    posts.forEach((item) => {
+      item.createdAt = formatDate(item.createdAt);
+    });
+
     res.status(202).json({ msg: "good", posts });
   } catch (e) {
     res.status(500).json({ msg: "error", error: e });

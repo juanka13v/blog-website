@@ -8,8 +8,11 @@ const mainRoute = require("./routes/index");
 const postRoute = require("./routes/postRoute");
 const authorRoute = require("./routes/authorRoute");
 const categoryRoute = require("./routes/categoryRoute");
+const {formatDate} = require('./helpers/changeDate')
 
 const app = express();
+
+app.locals.formatDate = formatDate  
 
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +28,7 @@ app.use("/", mainRoute);
 app.use("/", postRoute);
 app.use("/", authorRoute);
 app.use("/", categoryRoute);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

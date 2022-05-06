@@ -2,33 +2,11 @@
 
 <aside class="container">
   <ul class="aside">
-    <li>
-      <a href="#"><i class="bx bx-radio"></i>News</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-run"></i>Deports</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-radio"></i>News</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-dollar-circle"></i>Finance</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bxl-bitcoin"></i>Crypto</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-run"></i>Deports</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bxs-first-aid"></i>Health</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-dollar-circle"></i>Finance</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-bowl-hot"></i>Food</a>
-    </li>
+    <% categories.forEach(function(category) { %>
+      <li>
+        <a href=<%= category.link %>><i class="<%= category.icon %>"></i><%= category.name %> </a>
+      </li>
+    <% }); %>
   </ul>
 </aside>
 
@@ -41,33 +19,32 @@
   </div>
 </div>
 
+
 <main class="container">
   <section class="article-container">
     <article class="post">
       <div class="post-header">
         <i class="bx bxs-calendar-event"></i>
-        <span>Dec 5, 2021 </span>
+        <span><%= formatDate(posts[0].createdAt); %></span>
         <i class="bx bx-alarm"></i>
-        <span>01 min read</span>
+        <span><%= posts[0].min %>  min read</span>
       </div>
       <div class="post-body">
-        <h3>The AGI hype train is running out of steam While</h3>
+        <h3><%= posts[0].title %></h3>
         <p>
-          While futurists and fundraisers used to make bullish predictions
-          about artificial general intelligence, they’ve become quieter
-          lately. Peter Thiel...
+          <%= posts[0].description %>
         </p>
       </div>
       <div class="post-footer">
         <div class="user">
           <i class="bx bx-user-circle"></i>
-          <p>by <span>Thomas</span></p>
+          <p>by <span><%= posts[0].author %></span></p>
         </div>
         <div class="tags">
-          <i class="bx bx-purchase-tag"></i>
-          <span>anime</span>
-          <i class="bx bx-purchase-tag"></i>
-          <span>games</span>
+          <% posts[0].tags.forEach(function(tag) { %>
+            <i class="bx bx-purchase-tag"></i>
+            <span><%= tag %> </span>
+          <% }); %>
         </div>
       </div>
     </article>
@@ -75,28 +52,26 @@
     <article class="post">
       <div class="post-header">
         <i class="bx bxs-calendar-event"></i>
-        <span>Dec 5, 2021 </span>
+        <span><%= formatDate(posts[0].createdAt); %></span>
         <i class="bx bx-alarm"></i>
-        <span>01 min read</span>
+        <span><%= posts[0].min %>  min read</span>
       </div>
       <div class="post-body">
-        <h3>The AGI hype train is running out of steam While</h3>
+        <h3><%= posts[0].title %></h3>
         <p>
-          While futurists and fundraisers used to make bullish predictions
-          about artificial general intelligence, they’ve become quieter
-          lately. Peter Thiel...
+          <%= posts[0].description %>
         </p>
       </div>
       <div class="post-footer">
         <div class="user">
           <i class="bx bx-user-circle"></i>
-          <p>by <span>Thomas</span></p>
+          <p>by <span><%= posts[0].author %></span></p>
         </div>
         <div class="tags">
-          <i class="bx bx-purchase-tag"></i>
-          <span>anime</span>
-          <i class="bx bx-purchase-tag"></i>
-          <span>games</span>
+          <% posts[0].tags.forEach(function(tag) { %>
+            <i class="bx bx-purchase-tag"></i>
+            <span><%= tag %> </span>
+          <% }); %>
         </div>
       </div>
     </article>
