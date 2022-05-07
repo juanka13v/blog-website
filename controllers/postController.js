@@ -12,12 +12,10 @@ const getPost = async (req, res) => {
 
 const getAllPost = async (req, res) => {
   try {
-    const posts = await Post.find();
-    posts.forEach((item) => {
-      item.createdAt = formatDate(item.createdAt);
-    });
+    const posts = await Post.count();
+    console.log(posts);
 
-    res.status(202).json({ msg: "good", posts });
+    res.status(200).json({ msg: "good", posts });
   } catch (e) {
     res.status(500).json({ msg: "error", error: e });
   }

@@ -22,130 +22,64 @@
 
 <main class="container">
   <section class="article-container">
-    <article class="post">
-      <div class="post-header">
-        <i class="bx bxs-calendar-event"></i>
-        <span><%= formatDate(posts[0].createdAt); %></span>
-        <i class="bx bx-alarm"></i>
-        <span><%= posts[0].min %>  min read</span>
-      </div>
-      <div class="post-body">
-        <h3><%= posts[0].title %></h3>
-        <p>
-          <%= posts[0].description %>
-        </p>
-      </div>
-      <div class="post-footer">
-        <div class="user">
-          <i class="bx bx-user-circle"></i>
-          <p>by <span><%= posts[0].author %></span></p>
-        </div>
-        <div class="tags">
-          <% posts[0].tags.forEach(function(tag) { %>
-            <i class="bx bx-purchase-tag"></i>
-            <span><%= tag %> </span>
-          <% }); %>
-        </div>
-      </div>
-    </article>
 
-    <article class="post">
-      <div class="post-header">
-        <i class="bx bxs-calendar-event"></i>
-        <span><%= formatDate(posts[0].createdAt); %></span>
-        <i class="bx bx-alarm"></i>
-        <span><%= posts[0].min %>  min read</span>
-      </div>
-      <div class="post-body">
-        <h3><%= posts[0].title %></h3>
-        <p>
-          <%= posts[0].description %>
-        </p>
-      </div>
-      <div class="post-footer">
-        <div class="user">
-          <i class="bx bx-user-circle"></i>
-          <p>by <span><%= posts[0].author %></span></p>
+    <% posts.forEach(function(post) { %>
+      <article class="post">
+        <div class="post-header">
+          <i class="bx bxs-calendar-event"></i>
+          <span><%= formatDate(post.createdAt); %></span>
+          <i class="bx bx-alarm"></i>
+          <span><%= post.min %>  min read</span>
         </div>
-        <div class="tags">
-          <% posts[0].tags.forEach(function(tag) { %>
-            <i class="bx bx-purchase-tag"></i>
-            <span><%= tag %> </span>
-          <% }); %>
+        <div class="post-body">
+          <h3><%= post.title %></h3>
+          <p>
+            <%= post.description %>
+          </p>
         </div>
-      </div>
-    </article>
+        <div class="post-footer">
+          <div class="user">
+            <i class="bx bx-user-circle"></i>
+            <p>by <span><%= post.author.author %></span></p>
+          </div>
+          <div class="tags">
+            <% post.tags.forEach(function(tag) { %>
+              <i class="bx bx-purchase-tag"></i>
+              <span><%= tag %> </span>
+            <% }); %>
+          </div>
+        </div>
+      </article>
+    <% }); %>
 
-    <article class="post">
-      <div class="post-header">
-        <i class="bx bxs-calendar-event"></i>
-        <span>Dec 5, 2021 </span>
-        <i class="bx bx-alarm"></i>
-        <span>01 min read</span>
-      </div>
-      <div class="post-body">
-        <h3>The AGI hype train is running out of steam While</h3>
-        <p>
-          While futurists and fundraisers used to make bullish predictions
-          about artificial general intelligence, they’ve become quieter
-          lately. Peter Thiel...
-        </p>
-      </div>
-      <div class="post-footer">
-        <div class="user">
-          <i class="bx bx-user-circle"></i>
-          <p>by <span>Thomas</span></p>
-        </div>
-        <div class="tags">
-          <i class="bx bx-purchase-tag"></i>
-          <span>anime</span>
-          <i class="bx bx-purchase-tag"></i>
-          <span>games</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="post">
-      <div class="post-header">
-        <i class="bx bxs-calendar-event"></i>
-        <span>Dec 5, 2021 </span>
-        <i class="bx bx-alarm"></i>
-        <span>01 min read</span>
-      </div>
-      <div class="post-body">
-        <h3>The AGI hype train is running out of steam While</h3>
-        <p>
-          While futurists and fundraisers used to make bullish predictions
-          about artificial general intelligence, they’ve become quieter
-          lately. Peter Thiel...
-        </p>
-      </div>
-      <div class="post-footer">
-        <div class="user">
-          <i class="bx bx-user-circle"></i>
-          <p>by <span>Thomas</span></p>
-        </div>
-        <div class="tags">
-          <i class="bx bx-purchase-tag"></i>
-          <span>anime</span>
-          <i class="bx bx-purchase-tag"></i>
-          <span>games</span>
-        </div>
-      </div>
-    </article>
   </section>
 </main>
 
 
 <div class="navigation container">
   <ul>
-    <li><i class="bx bx-chevron-left-circle"></i></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
+    <%if (info.prev) { %>
+      <li class="arrow"><a href='/?page=<%= info.prev %>'><i class="bx bx-chevron-left-circle"></i></a></li>
+    <% } %>
+
+
+    <% info.nav.forEach(function(i) { %>
+      <% if (info.page == i ) { %>
+        <li class="active"><a href="/?page=<%= i %> "><%= i %></a></li>
+      <% }else{ %>
+        <li><a href="/?page=<%= i %> "><%= i %></a></li>
+      <% } %>
+    <% }); %>
+    
+
+
+    <!-- <li><a href="#">3</a></li>
     <li class="active"><a href="#">4</a></li>
     <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><i class="bx bx-chevron-right-circle"></i></li>
+    <li><a href="#">6</a></li> -->
+    <%if (info.next) { %>
+      <li class="arrow"><a href='/?page=<%= info.next %>'><i class="bx bx-chevron-right-circle"></i></a></li>
+    <% } %>
   </ul>
 </div>
 

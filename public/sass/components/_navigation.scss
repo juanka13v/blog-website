@@ -9,8 +9,7 @@
     align-items: center;
     color: $color-black;
 
-    li:first-child,
-    li:last-child {
+    .arrow {
       display: flex;
       align-items: center;
       border-bottom: none;
@@ -44,11 +43,13 @@
         cursor: default;
         font-weight: 600;
         border-bottom: 2px solid $color-gray;
+        pointer-events: none;
         
         a { 
             color: $color-gray;
         }
       }
     }
+
   }
 }
