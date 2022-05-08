@@ -2,8 +2,6 @@ const Category = require("../models/Category");
 const Post = require("../models/Post");
 const { navs } = require("../helpers/navGenerator");
 
-// Component ERROR
-
 
 const home = async (req, res) => {
   try {

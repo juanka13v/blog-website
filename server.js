@@ -10,7 +10,6 @@ const authorRoute = require("./routes/authorRoute");
 const categoryRoute = require("./routes/categoryRoute");
 const { formatDate } = require("./helpers/changeDate");
 
-
 const app = express();
 
 app.locals.formatDate = formatDate;
@@ -30,10 +29,13 @@ app.use("/", postRoute);
 app.use("/", authorRoute);
 app.use("/", categoryRoute);
 
+app.get("*", function (req, res) {
+  res.status(404).render("404", { title: "Blog | Page not found" });
+});
 
 app.get("/test", (req, res) => {
-  res.render('test', {title: "Blog | Test"});
-})
+  res.render("test", { title: "Blog | Test" });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

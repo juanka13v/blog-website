@@ -1,0 +1,35 @@
+.page_not_found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+    @media screen and (max-width: $sm) {
+        padding: 2rem 1rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    button {
+        a {
+            text-decoration: none;
+            color: $color-white;
+        }
+    }
+}
