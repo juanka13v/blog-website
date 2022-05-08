@@ -4,10 +4,6 @@ const { navs } = require("../helpers/navGenerator");
 
 // Component ERROR
 
-// "count": 826,
-// "pages": 42,
-// "next": "https://rickandmortyapi.com/api/character?page=2",
-// "prev": null
 
 const home = async (req, res) => {
   try {
@@ -18,8 +14,8 @@ const home = async (req, res) => {
     info.page = Number(req.query.page) || 1;
     info.limit = Number(req.query.limit) || 7;
     info.pages = info.totalPosts / info.limit;
-    info.next = info.page == info.pages ? null : info.page + 1;
-    info.prev = info.page == 1 ? null : info.page - 1;
+    info.next = (info.page == info.pages) ? null : info.page + 1;
+    info.prev = (info.page == 1) ? null : info.page - 1;
     info.nav = navs(info.page, info.pages);
 
 

@@ -30,6 +30,11 @@ app.use("/", postRoute);
 app.use("/", authorRoute);
 app.use("/", categoryRoute);
 
+
+app.get("/test", (req, res) => {
+  res.render('test', {title: "Blog | Test"});
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
