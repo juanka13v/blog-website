@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 app.use("/", mainRoute);
 app.use("/", postRoute);
 app.use("/", authorRoute);
-app.use("/", categoryRoute);
+// app.use("/", categoryRoute);
 
 app.get("*", function (req, res) {
   res.status(404).render("404", { title: "Blog | Page not found" });

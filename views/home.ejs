@@ -1,14 +1,11 @@
 <%- include('./includes/header.ejs') %>
 
-<aside class="container">
-  <ul class="aside">
-    <% categories.forEach(function(category) { %>
-      <li>
-        <a href=<%= category.link %>><i class="<%= category.icon %>"></i><%= category.name %> </a>
-      </li>
-    <% }); %>
-  </ul>
-</aside>
+
+<% if (typeof categories !== 'undefined' && categories.length > 0) { %>
+  <%- include('./includes/aside.ejs', {categories: categories}) %>
+<% } %>
+
+
 
 <div class="title-container">
   <div class="title">

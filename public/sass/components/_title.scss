@@ -9,6 +9,7 @@
     h3 {
       font-size: 1.5rem;
       border-bottom: 2px solid $color-black;
+      text-transform: capitalize;
     }
   }
 
@@ -19,6 +20,7 @@
 
     p {
       margin-right: 2px;
+      text-transform: capitalize;
 
       a {
         text-decoration: none;

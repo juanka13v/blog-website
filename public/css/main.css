@@ -589,13 +589,15 @@ aside {
     width: max-content; }
     .title-container .title h3 {
       font-size: 1.5rem;
-      border-bottom: 2px solid #000; }
+      border-bottom: 2px solid #000;
+      text-transform: capitalize; }
   .title-container .nav-title {
     margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap; }
     .title-container .nav-title p {
-      margin-right: 2px; }
+      margin-right: 2px;
+      text-transform: capitalize; }
       .title-container .nav-title p a {
         text-decoration: none;
         color: #000;
@@ -648,3 +650,44 @@ aside {
   .page_not_found button a {
     text-decoration: none;
     color: #fff; }
+
+.container-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+  .container-category .cards-category {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 1rem; }
+    @media screen and (max-width: 769px) {
+      .container-category .cards-category {
+        grid-template-columns: 1fr 1fr; } }
+    @media screen and (max-width: 480px) {
+      .container-category .cards-category {
+        grid-template-columns: 1fr;
+        max-width: 300px; } }
+    .container-category .cards-category a {
+      text-decoration: none;
+      color: inherit;
+      transition: all ease 0.3s; }
+      .container-category .cards-category a:hover {
+        transform: scale(1.02); }
+      .container-category .cards-category a .card-category {
+        border: 2px solid #535351;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        font-weight: 500;
+        color: #535351; }
+        .container-category .cards-category a .card-category:hover {
+          font-weight: 600;
+          border: 2px solid #000;
+          color: #000; }
+        .container-category .cards-category a .card-category h3 {
+          font-weight: inherit; }
+        .container-category .cards-category a .card-category .icon-category {
+          font-size: 2.5rem; }

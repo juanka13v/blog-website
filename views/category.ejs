@@ -1,0 +1,78 @@
+<%- include('includes/header') %>
+
+<div class="title-container">
+  <div class="title">
+    <h3><%= info.name %></h3>
+  </div>
+  <div class="nav-title">
+    <p><a href="/">Home</a></p>
+    <i class="bx bx-chevron-right"></i>
+    <p><a href="/categories">Categories</a></p>
+    <i class="bx bx-chevron-right"></i>
+    <p class="active"><%= info.name %> </p>
+  </div>
+</div>
+
+<% if (typeof posts !== 'undefined' && posts.length > 0) { %>
+    <main class="container">
+      <section class="article-container">
+      
+          <% posts.forEach(function(post) { %>
+            <article class="post">
+              <div class="post-header">
+                <i class="bx bxs-calendar-event"></i>
+                <span><%= formatDate(post.createdAt); %></span>
+                <i class="bx bx-alarm"></i>
+                <span><%= post.min %>  min read</span>
+              </div>
+              <div class="post-body">
+                <h3><%= post.title %></h3>
+                <p>
+                  <%= post.description %>
+                </p>
+              </div>
+              <div class="post-footer">
+                <div class="user">
+                  <i class="bx bx-user-circle"></i>
+                  <p>by <span><%= post.author.author %></span></p>
+                </div>
+                <div class="tags">
+                  <% post.tags.forEach(function(tag) { %>
+                    <i class="bx bx-purchase-tag"></i>
+                    <span><%= tag %> </span>
+                  <% }); %>
+                </div>
+              </div>
+            </article>
+          <% }); %>
+      
+        </section>
+    </main>
+<% }else { %>
+    <%- include('./includes/error.ejs') %> 
+<% } %>
+
+
+<div class="navigation container">
+    <ul>
+      <%if (info.prev) { %>
+        <li class="arrow"><a href='/category/<%= info.name %>/?page=<%= info.prev %>'><i class="bx bx-chevron-left-circle"></i></a></li>
+      <% } %>
+  
+      <% info.nav.forEach(function(i) { %>
+        <% if (info.page == i ) { %>
+          <li class="active"><a href="/category/<%= info.name %>/?page=<%= i %> "><%= i %></a></li>
+        <% }else{ %>
+          <li><a href="/category/<%= info.name %>/?page=<%= i %> "><%= i %></a></li>
+        <% } %>
+      <% }); %>
+      
+      <%if (info.next) { %>
+        <li class="arrow"><a href='/category/<%= info.name %>/?page=<%= info.next %>'><i class="bx bx-chevron-right-circle"></i></a></li>
+      <% } %>
+    </ul>
+  </div>
+
+
+
+<%- include('includes/footer') %>

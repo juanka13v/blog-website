@@ -12,8 +12,7 @@ const getPost = async (req, res) => {
 
 const getAllPost = async (req, res) => {
   try {
-    const posts = await Post.count();
-    console.log(posts);
+    const posts = await Post.find();
 
     res.status(200).json({ msg: "good", posts });
   } catch (e) {
