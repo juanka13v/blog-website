@@ -1,0 +1,21 @@
+<div class="navigation container">
+  <ul>
+    <%if (info.prev) { %>
+    <li class="arrow">
+      <a href="<%= ref %>?page=<%= info.prev %>"
+        ><i class="bx bx-chevron-left-circle"></i
+      ></a>
+    </li>
+    <% } %> <% info.nav.forEach(function(i) { %> <% if (info.page == i ) { %>
+    <li class="active"><a href="<%= ref %>?page=<%= i %> "><%= i %></a></li>
+    <% }else{ %>
+    <li><a href="<%= ref %>?page=<%= i %> "><%= i %></a></li>
+    <% } %> <% }); %> <%if (info.next) { %>
+    <li class="arrow">
+      <a href="<%= ref %>?page=<%= info.next %>"
+        ><i class="bx bx-chevron-right-circle"></i
+      ></a>
+    </li>
+    <% } %>
+  </ul>
+</div>

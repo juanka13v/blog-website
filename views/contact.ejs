@@ -1,15 +1,9 @@
-<%- include('./includes/header.ejs') %>
+<%- include('includes/header') %>
 
-<div class="title-container">
-  <div class="title">
-    <h3>Contact</h3>
-  </div>
-  <div class="nav-title">
-    <p><a href="#">Home</a></p>
-    <i class="bx bx-chevron-right"></i>
-    <p class="active">Contact</p>
-  </div>
-</div>
+<%- include('includes/title-nav', {title: "contact", links: [
+  {name: "home",ref: "/"},
+  {name: "contact",ref: "/contact"}
+]}) %>
 
 <main class="container">
   <div class="contact">
@@ -48,4 +42,4 @@
   </div>
 </main>
 
-<%- include('./includes/footer.ejs') %>
+<%- include('includes/footer') %>

@@ -1,16 +1,9 @@
 <%- include('./includes/header.ejs') %>
 
-
-<div class="title-container">
-  <div class="title">
-    <h3>About</h3>
-  </div>
-  <div class="nav-title">
-    <p><a href="#">Home</a></p>
-    <i class='bx bx-chevron-right'></i>
-    <p class="active">About</p>
-  </div>      
-</div>
+<%- include('includes/title-nav', {title: "about", links: [
+  {name: "home",ref: "/"},
+  {name: "about",ref: "/about"}
+]}) %>
 
 <main class="container">
 

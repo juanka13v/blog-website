@@ -1,0 +1,15 @@
+<div class="title-container">
+  <div class="title">
+    <h3><%= title %> </h3>
+  </div>
+  <div class="nav-title">
+    <% links.forEach(function(link, index) { %>
+        <% if(index == links.length - 1) { %>
+            <p class="active"><%= link.name %></p>
+        <% }else{ %>      
+            <p><a href="<%= link.ref %> "><%= link.name %></a></p>
+            <i class="bx bx-chevron-right"></i>
+        <% } %> 
+     <% }); %> 
+  </div>
+</div>
