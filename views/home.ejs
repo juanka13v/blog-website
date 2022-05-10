@@ -1,10 +1,5 @@
 <%- include('./includes/header.ejs') %>
 
-
-<% if (typeof categories !== 'undefined' && categories.length > 0) { %>
-  <%- include('./includes/aside.ejs', {categories: categories}) %>
-<% } %>
-
   
 <%- include('includes/title-nav', {title: "lastest update", links: [
   {name: "home",ref: "/"}
@@ -12,7 +7,7 @@
 
 
 
-<%- include('includes/posts', {posts, info, ref: '/'}) %> 
+<%- include('includes/posts', {posts, info, ref: '/', categories}) %> 
 
 
 <%- include('./includes/footer.ejs') %>

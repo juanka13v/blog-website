@@ -1,9 +1,17 @@
-<aside class="container">
-    <ul class="aside">
-      <% categories.forEach(function(category) { %>
-        <li>
-          <a href=<%= category.link %>><i class="<%= category.icon %>"></i><%= category.name %> </a>
-        </li>
-      <% }); %>
-    </ul>
+<aside class="aside-container">
+  <form class="aside-header">
+    <label for="">Search:</label>
+    <input type="text">
+    <button>
+      <i class='bx bx-search'></i>
+    </button>
+  </form>
+  <ul class="aside-categories">
+    <h3>Categories</h3>
+    <% categories.forEach(function(category) { %>
+      <li>
+        <a href="/category<%= category.link %>"><i class="<%= category.icon %>"></i><%= category.name %> </a>
+      </li>
+    <% }); %>
+  </ul>
 </aside>

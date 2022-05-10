@@ -10,6 +10,8 @@ const authorRoute = require("./routes/authorRoute");
 const categoryRoute = require("./routes/categoryRoute");
 const { formatDate } = require("./helpers/changeDate");
 
+const Category = require('./models/Category');
+
 const app = express();
 
 app.locals.formatDate = formatDate;
@@ -29,12 +31,14 @@ app.use("/", postRoute);
 app.use("/", authorRoute);
 // app.use("/", categoryRoute);
 
-app.get("*", function (req, res) {
-  res.status(404).render("404", { title: "Blog | Page not found" });
+app.get("/test", async (req, res) => {
+  const categories = await Category.find();
+
+  res.render("test", { title: "Blog | Test", categories });
 });
 
-app.get("/test", (req, res) => {
-  res.render("test", { title: "Blog | Test" });
+app.get("*", function (req, res) {
+  res.status(404).render("404", { title: "Blog | Page not found" });
 });
 
 app.listen(port, () => {

@@ -1,5 +1,11 @@
 <% if (typeof posts !== 'undefined' && posts.length > 0) { %>
-<main class="container">
+<main class="container main-container">
+
+  <% if (typeof categories !== 'undefined' && categories.length > 0) { %>
+    <%- include('aside', {categories: categories}) %>
+  <% } %>
+
+
   <section class="article-container">
     <% posts.forEach(function(post) { %>
     <article class="post">
