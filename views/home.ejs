@@ -1,13 +1,25 @@
-<%- include('./includes/header.ejs') %>
+<%- include('includes/header') %>
 
-  
 <%- include('includes/title-nav', {title: "lastest update", links: [
   {name: "home",ref: "/"}
 ]}) %>
 
+<div class="container home-container">
+  <div class="aside">
+    <% if (typeof categories !== 'undefined' && categories.length > 0) { %>
+      <%- include('includes/aside', {categories: categories}) %>
+    <% } %>
+      
+    <%- include('includes/tags', {tags}) %>
+  </div>
+  
+  <div class="posts">
+    <%- include('includes/posts', {posts, info, ref: '/'}) %> 
+  </div>
+
+</div>
+  
 
 
-<%- include('includes/posts', {posts, info, ref: '/', categories}) %> 
 
-
-<%- include('./includes/footer.ejs') %>
+<%- include('includes/footer') %>

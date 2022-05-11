@@ -1,0 +1,22 @@
+.home-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+
+  .aside {
+    width: 27%;
+    @media screen and (max-width: $md) {
+      width: 100%;
+    }
+  }
+
+  .posts {
+    width: 73%;
+    @media screen and (max-width: $md) {
+      width: 100%;
+    }
+  }
+}

@@ -48,20 +48,9 @@ body {
   grid-template-columns: repeat(2 , 1fr);
   gap: 1rem;
   
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: 950px) {
     grid-template-columns: repeat(1 , 1fr);
     justify-items: center;
   }
 }
 
-
-.main-container {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 1rem;
-  border: 1px solid red;
-
-  @media screen and (max-width: 860px) {
-    flex-direction: column !important;
-  }
-}

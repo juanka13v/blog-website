@@ -8,6 +8,7 @@ const mainRoute = require("./routes/index");
 const postRoute = require("./routes/postRoute");
 const authorRoute = require("./routes/authorRoute");
 const categoryRoute = require("./routes/categoryRoute");
+const tagRoute = require("./routes/tagRoute");
 const { formatDate } = require("./helpers/changeDate");
 
 const Category = require('./models/Category');
@@ -27,9 +28,10 @@ app.set("view engine", "ejs");
 
 // Routes
 app.use("/", mainRoute);
-app.use("/", postRoute);
-app.use("/", authorRoute);
-// app.use("/", categoryRoute);
+app.use("/api/v1", postRoute);
+app.use("/api/v1", authorRoute);
+app.use("/api/v1", categoryRoute);
+app.use("/api/v1", tagRoute);
 
 app.get("/test", async (req, res) => {
   const categories = await Category.find();

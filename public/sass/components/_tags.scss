@@ -1,0 +1,46 @@
+.tags-container {
+  margin-top: 2rem;
+  border: 2px $color-black solid;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  height: max-content;
+  padding: 1rem;
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+
+  h3 {
+    font-weight: 500;
+    color: $color-gray;
+    margin-bottom: 0.5rem;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      font-size: 15px;
+
+      i {
+          margin-right: 2px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-gray;
+
+        &:hover {
+            font-weight: 500;
+            color: $color-black;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,11 @@
 const Category = require("../models/Category");
 const Post = require("../models/Post");
+const Tag = require("../models/Tag");
 const { navs } = require("../helpers/navGenerator");
 
 const home = async (req, res) => {
   try {
+    const tags = await Tag.find()
     const totalPosts = await Post.find().count();
     const info = {};
     
@@ -14,8 +16,6 @@ const home = async (req, res) => {
     info.next = info.page == info.pages ? null : info.page + 1;
     info.prev = info.page == 1 ? null : info.page - 1;
     info.nav = navs(info.page, info.pages);
-
-    console.log(info);
     
     const categories = await Category.find();
     const posts = await Post.find()
@@ -23,7 +23,7 @@ const home = async (req, res) => {
       .limit(info.limit)
       .skip((info.page - 1) * info.limit);
 
-    res.render("home", { title: "Blog | Home", categories, posts, info });
+    res.render("home", { title: "Blog | Home", categories, posts, info, tags });
   } catch (e) {
     console.log(e);
     res.render("errorPage", { title: "Blog | error" });

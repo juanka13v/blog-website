@@ -6,7 +6,7 @@
   max-width: 300px;
   height: max-content;
 
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: $md) {
     max-width: 100%;
   }
   
@@ -15,13 +15,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media screen and (max-width: 860px) {
+    @media screen and (max-width: $md) {
       flex-direction: row;
     }
 
     label {
       margin-bottom: .5rem;
-      @media screen and (max-width: 860px) {
+      align-self: flex-start;
+      @media screen and (max-width: $md) {
         margin: 0;
         margin-right: 10px;
       }
@@ -31,7 +32,8 @@
       margin-bottom: .5rem;
       height: 1.6rem;
       font-size: .8rem;
-      @media screen and (max-width: 860px) {
+      width: 100%;
+      @media screen and (max-width: $md) {
         margin: 0;
         margin-right: 10px;
         width: 100%;
@@ -47,17 +49,19 @@
       background: $color-black;
       color: $color-white;
       font-size: 1rem;
+      width: 100%;
       padding: 6px 0 3px 0;
       border: 2px solid transparent;
       cursor: pointer;
       transition: all .3s ease;
-      @media screen and (max-width: 860px) {
+      @media screen and (max-width: $md) {
         padding: 1px 15px;
+        width: max-content;
       }
 
       i {
         transform: scale(1.3);
-        @media screen and (max-width: 860px) {
+        @media screen and (max-width: $md) {
           transform: scale(1.1);
         }
       }
@@ -75,7 +79,7 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    @media screen and (max-width: 860px) {
+    @media screen and (max-width: $md) {
       flex-direction: row;
       flex-wrap: wrap;
     }
@@ -83,7 +87,7 @@
     h3 {
       font-weight: 500;
       color: $color-gray;
-      @media screen and (max-width: 860px) {
+      @media screen and (max-width: $md) {
         display: none;
       }
     }
@@ -91,7 +95,7 @@
     li {
       padding: 8px 10px;
       border-bottom: 1px solid $color-gray;
-      @media screen and (max-width: 860px) {
+      @media screen and (max-width: $md) {
         border-bottom: none;
       }
       a {
