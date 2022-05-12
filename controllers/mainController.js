@@ -77,6 +77,43 @@ const category = async (req, res) => {
   res.render("category", { title: `Blog | ${name}`, info, posts });
 };
 
+const tags = async (req, res) => {
+  const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+  try {
+    const tags = await Tag.find()
+    res.render("allTags", { title: "Blog | Tags", abc, tags });
+  } catch (e) {
+    res.render('errorPage', {title: "Blog | Error"})
+  }
+};
+
+const posts = async (req, res) => {
+  try {
+    const tag = req.query.tag
+    const totalPosts = await Post.find({tags: tag}).count();
+    const info = {};
+    
+    info.totalPosts = totalPosts;
+    info.page = Number(req.query.page) || 1;
+    info.limit = Number(req.query.limit) || 10;
+    info.pages = info.totalPosts / info.limit;
+    info.next = info.page == info.pages ? null : info.page + 1;
+    info.prev = info.page == 1 ? null : info.page - 1;
+    info.nav = navs(info.page, info.pages);
+    info.name = req.query.tag
+    
+    const posts = await Post.find({tags: tag })
+      .populate("author")
+      .limit(info.limit)
+      .skip((info.page - 1) * info.limit);
+
+    res.render('search',{title: "Blog | Search", posts, info })
+  } catch (e) {
+    
+  }
+}
+
 module.exports = {
   home,
   about,
@@ -85,4 +122,6 @@ module.exports = {
   post,
   categories,
   category,
+  tags,
+  posts
 };

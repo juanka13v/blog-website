@@ -1,0 +1,18 @@
+<%- include('includes/header') %>
+
+<%- include('includes/title-nav', {title: "Search", links: [
+  {name: "home",ref: "/"},
+  {name: "posts",ref: "/posts"},
+  {name: "river",ref: "/"},
+
+]}) %>
+
+<div class="container">
+    <%- include('includes/posts', {posts, info, ref: `/posts?tag=${info.name}&&`}) %> 
+</div>
+
+  
+
+
+
+<%- include('includes/footer') %>
