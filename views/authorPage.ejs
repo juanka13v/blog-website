@@ -1,0 +1,31 @@
+<%- include('includes/header') %>
+
+<%- include('includes/title-nav', {title:
+"ricardo martinez", links: [ {name: "home",ref: "/"},
+{name:'authors',ref:'/authors'}, {name:'ricardo',ref:'/'} ]}) %>
+
+<main class="container author-container">
+  <div class="author-header">
+    <figure class="author-img">
+      <i class="bx bxs-user-rectangle"></i>
+    </figure>
+    <div class="author-info">
+      <h2>Ricardo Martinez</h2>
+      <span>6273d927cc1a2ab8eafb1226</span>
+      <span><i class='bx bx-calendar'></i> 13/4/1999</span>
+      <span><i class='bx bx-receipt'></i> 15 posts</span>
+      <h3>Description:</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A pariatur
+        accusantium, dolorum perferendis inventore suscipit eum impedit fugiat
+        asperiores unde nihil atque ex illum. Ipsa explicabo eveniet esse harum
+        distinctio.
+      </p>
+    </div>
+  </div>
+  <div class="author-body">
+      <%- include('includes/posts',{ posts:author.posts, info, ref: "/author"}) %> 
+  </div>
+</main>
+
+<%- include('includes/footer') %>

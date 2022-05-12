@@ -1,21 +1,37 @@
 <div class="navigation container">
   <ul>
     <%if (info.prev) { %>
-    <li class="arrow">
-      <a href="<%= ref %>page=<%= info.prev %>"
-        ><i class="bx bx-chevron-left-circle"></i
-      ></a>
-    </li>
-    <% } %> <% info.nav.forEach(function(i) { %> <% if (info.page == i ) { %>
-    <li class="active"><a href="<%= ref %>page=<%= i %> "><%= i %></a></li>
-    <% }else{ %>
-    <li><a href="<%= ref %>page=<%= i %> "><%= i %></a></li>
-    <% } %> <% }); %> <%if (info.next) { %>
-    <li class="arrow">
-      <a href="<%= ref %>page=<%= info.next %>"
-        ><i class="bx bx-chevron-right-circle"></i
-      ></a>
-    </li>
+    <a href="<%= ref %>page=<%= info.prev %>" class="active">
+      <li class="arrow">
+        <i class='bx bx-chevron-left'></i>
+      </li>
+    </a>
+    <% } %>
+
+
+
+    <% info.nav.forEach(function(i) { %> 
+      <% if (info.page == i ) { %>
+        <a href="<%= ref %>page=<%= i %> " class="active">
+          <li>
+            <%= i %>
+          </li>
+        </a>
+      <% }else{ %>
+        <a href="<%= ref %>page=<%= i %> ">
+          <li>
+            <%= i %>
+          </li>
+        </a>
+      <% } %> 
+    <% }); %> 
+    
+    <%if (info.next) { %>
+      <a href="<%= ref %>page=<%= info.next %>" class="active">
+        <li class="arrow">
+          <i class='bx bx-chevron-right'></i>
+        </li>
+      </a>
     <% } %>
   </ul>
 </div>

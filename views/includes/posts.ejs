@@ -22,7 +22,7 @@
         <div class="tags">
           <% post.tags.forEach(function(tag) { %>
           <i class='bx bxs-purchase-tag'></i>
-          <span><%= tag %></span>
+          <a href="/posts?tag=<%= tag %>"><%= tag %></a>
           <% }); %>
         </div>
       </div>

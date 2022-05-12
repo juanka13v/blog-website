@@ -8,7 +8,8 @@ const {
   categories,
   category,
   tags,
-  posts
+  posts,
+  author
 } = require("../controllers/mainController");
 
 route.get("/", home);
@@ -20,6 +21,7 @@ route.get("/categories", categories);
 route.get("/category/:name", category);
 route.get("/tags", tags);
 route.get("/posts", posts);
+route.get("/author/:id", author);
 
 
 module.exports = route;

@@ -7,49 +7,49 @@
     display: flex;
     list-style: none;
     align-items: center;
-    color: $color-black;
 
-    .arrow {
+    a {
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-bottom: 3px;
+      text-decoration: none;
+      border: 2px solid $color-black;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
-      border-bottom: none;
+      justify-content: center;
 
-      &:hover {
-        border-bottom: none;
-      }
-
-      i {
-        font-size: 1.4rem;
-        color: $color-black;
-      }
-    }
-
-    li {
-      cursor: pointer;
-      font-size: 1rem;
-      margin: 0 8px;
-      border-bottom: 2px transparent solid;
-
-      a {
+      li {
         text-decoration: none;
         color: $color-black;
+        font-size: 18px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        i {
+          font-size: 1.4rem;
+        }
+
+      }
+      &.active {
+        background: $color-black;
+        li {
+          font-weight: 600;
+          color: $color-white;
+        }
       }
 
       &:hover {
-        border-bottom: 2px solid $color-black;
-      }
-
-      &.active {
-        cursor: default;
-        font-weight: 600;
-        border-bottom: 2px solid $color-gray;
-        pointer-events: none;
-        
-        a { 
-            color: $color-gray;
+        background: $color-black;
+        li {
+          color: $color-white;
+          font-weight: 600;
         }
       }
     }
-
   }
 }

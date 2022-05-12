@@ -1,6 +1,21 @@
 ## ToDo
 
-- new aside
 - single Post
-- tags section
-- tags ref
+- author page
+- new navigation style
+- dashboard funtional
+- arreglar main posts
+
+## midddle ToDo
+
+- animations
+- change styles
+- add blogs data
+- markdown editor
+
+## Advanced ToDo
+
+- login/register
+- images
+- user config
+- dark mode

@@ -1,14 +1,14 @@
 <%- include('includes/header') %>
 
-<%- include('includes/title-nav', {title: "Search", links: [
+<%- include('includes/title-nav', {title: `Tag: "${info.tag}"`, links: [
   {name: "home",ref: "/"},
   {name: "posts",ref: "/posts"},
-  {name: "river",ref: "/"},
+  {name: "search",ref: "/"},
 
 ]}) %>
 
 <div class="container">
-    <%- include('includes/posts', {posts, info, ref: `/posts?tag=${info.name}&&`}) %> 
+    <%- include('includes/posts', {posts, info, ref: `/posts?tag=${info.tag}&&`}) %> 
 </div>
 
   

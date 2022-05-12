@@ -4,7 +4,7 @@
     <% tags.forEach(function(tag) { %> 
     <li>
       <i class='bx bxs-purchase-tag'></i>
-      <a href="#"><%= tag.name %></a>
+      <a href="/posts?tag=<%= tag.name %>"><%= tag.name %></a>
     </li>
     <% }); %> 
     <li>
