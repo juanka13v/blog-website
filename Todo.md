@@ -1,10 +1,29 @@
 ## ToDo
 
-- single Post
-- author page
-- new navigation style
+<!-- - single Post -->
+<!-- - author page -->
+<!-- - new navigation style -->
+<!-- - arreglar main posts -->
+- empty data component
 - dashboard funtional
-- arreglar main posts
+- new tags 
+- categories count
+<!-- - new nav  -->
+- new main/get started create
+<!-- . change names and controllers -->
+
+nav: 
+- inicio
+- explore
+    - post
+    - categories
+    - authors
+    - tags
+- us
+    - contact
+    - about
+- darkmode
+- login/register
 
 ## midddle ToDo
 

@@ -51,6 +51,7 @@ header {
     li {
       list-style: none;
       margin: 0 8px;
+      position: relative;
       @media screen and (max-width: $md) {
         margin: 0.6rem 0;
       }
@@ -63,6 +64,32 @@ header {
 
         &:hover {
           border-bottom: 2px solid $color-black;
+        }
+      }
+
+      &:focus-within  ul {
+        display: initial;
+      }
+      &:hover  ul {
+        display: initial;
+      }
+
+      ul {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        left: 0;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        display: none;
+        transition: all 0.3s ease;
+        @media screen and (max-width:769px) {
+          position: initial;
+        }
+
+        li {
+          margin-bottom: 10px;
         }
       }
 

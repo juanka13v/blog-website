@@ -11,13 +11,13 @@
         <span><%= post.min %> min read</span>
       </div>
       <div class="post-body">
-        <h3><%= post.title %></h3>
+        <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
         <p><%= post.description %></p>
       </div>
       <div class="post-footer">
         <div class="user">
           <i class="bx bx-user-circle"></i>
-          <p>by <span><%= post.author.author %></span></p>
+          <p>by <a href="/author/<%= post.author._id %>"><%= post.author.author %></a></p>
         </div>
         <div class="tags">
           <% post.tags.forEach(function(tag) { %>

@@ -6,7 +6,7 @@ const {
   createTag,
   updateTag,
   deleteTag,
-} = require("../controllers/tagController");
+} = require("../controllers/tag.api.controller");
 
 router.route("/tags").get(getAllTags).post(createTag);
 router

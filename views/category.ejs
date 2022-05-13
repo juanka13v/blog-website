@@ -3,11 +3,12 @@
 <%- include('includes/title-nav', {title: info.name, links: [
   {name: "home",ref: "/"},
   {name: "categories",ref: "/categories"},
-  {name: info.name ,ref: "/category/" + info.name},
+  {name: info.name ,ref: "/categories/" + info.name},
 ]}) %>
 
-<%- include('includes/posts', {posts, info, ref: '/category/' + info.name}) %> 
-
+<div class="container">
+  <%- include('includes/posts', {posts, info, ref: '/categories/' + info.name + "?"}) %> 
+</div>
 
 
 <%- include('includes/footer') %>

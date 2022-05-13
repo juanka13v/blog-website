@@ -1,17 +1,10 @@
-<%- include('./includes/header.ejs') %> 
+<%- include('includes/header') %> 
 
-<div class="title-container">
-  <div class="title">
-    <h3></h3>
-  </div>
-  <div class="nav-title">
-    <p><a href="#">Home</a></p>
-    <i class='bx bx-chevron-right'></i>
-    <p><a href="#">Posts</a></p>
-    <i class='bx bx-chevron-right'></i>
-    <p class="active">The AGI hype train is running out of steam</p>
-  </div>
-</div>
+<%- include('includes/title-nav', {title: post.title, links:[
+  {name:"home", ref:"/"},
+  {name:"posts", ref:"/posts"},
+  {name:post.title, ref:"/"}
+]}) %> 
 
 <main class="single-container container">
     <div class="single-header">
@@ -19,13 +12,13 @@
       <div class="single-info">
         <div class="user">
           <i class="bx bx-user-circle"></i>
-          <p>by <span>Thomas</span></p>
+          <p>by <a href="/author/<%= post.author._id %>"><%= post.author.author %></a></p>
         </div>
         <div class="info">
           <i class="bx bxs-calendar-event"></i>
-          <span>Dec 5, 2021 </span>
+          <span><%= formatDate(post.createdAt); %> </span>
           <i class="bx bx-alarm"></i>
-          <span>01 min read</span>
+          <span><%= post.min %> min read</span>
         </div>
       </div>
     </div>
@@ -56,10 +49,10 @@
 
       <div class="tags">
         <p>Tags:</p>
-        <i class="bx bx-purchase-tag"></i>
-        <span>anime</span>
-        <i class="bx bx-purchase-tag"></i>
-        <span>games</span>
+        <% post.tags.forEach(function(tag) { %>
+          <i class='bx bxs-purchase-tag'></i>
+          <a href="/posts?tag=<%= tag %>"><%= tag %></a>
+        <% }); %>
       </div>
     </div>
     <div class="single-links">

@@ -5,10 +5,11 @@
   margin: 2rem 0;
 
   .about-section {
+    max-width: 1100px;
+    margin: 1rem auto;
     border: 2px solid $color-black;
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 0;
     @media screen and (max-width: $md) {
       flex-direction: column;
     }

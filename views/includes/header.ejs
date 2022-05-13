@@ -5,39 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../public/css/main.css" />
-     <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <title><%= title %> </title>
+    <title><%= title %></title>
   </head>
   <body>
     <header class="container">
       <div class="logo">
         <h2>
-          <i class='bx bxs-zap'></i>
+          <i class="bx bxs-zap"></i>
           Blogs News
         </h2>
       </div>
       <div class="menu-icon" id="btn-menu">
-        <i class='bx bx-menu'></i>
+        <i class="bx bx-menu"></i>
       </div>
       <div class="menu" id="menu">
         <ul>
           <li><a href="/">Inicio</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/about">About</a></li>
+          <li>
+            <a href="#">Explore</a>
+            <i class='bx bx-chevron-down'></i>
+            <ul>
+              <li><a href="/posts">posts</a></li>
+              <li><a href="/categories">categories</a></li>
+              <li><a href="/authors">authors</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/#">about us</a>
+            <i class='bx bx-chevron-down'></i>
+            <ul>
+              <li><a href="/contact">contact</a></li>
+              <li><a href="/about">about</a></li>
+            </ul>
+          </li>
           <li>
             <button class="btn"><a href="/dashboard">Dashboard</a></button>
           </li>
         </ul>
       </div>
     </header>
-  </body>
-</html>

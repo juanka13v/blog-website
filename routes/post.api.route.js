@@ -6,7 +6,7 @@ const {
   createPost,
   updatePost,
   deletePost,
-} = require("../controllers/postController");
+} = require("../controllers/post.api.controller");
 
 router.route("/posts").get(getAllPost).post(createPost);
 router.route("/post/:id").get(getPost).put(updatePost).delete(deletePost);

@@ -36,7 +36,8 @@
           font-weight: 500;
           color: $color-black;
 
-          span {
+          a {
+            text-decoration: none;
             font-size: 14px;
             font-weight: 600;
             color: $color-gray;
@@ -106,7 +107,8 @@
         font-size: 18px;
       }
 
-      span {
+      a {
+        text-decoration: none;
         font-size: 14px;
         font-weight: 600;
         color: $color-gray;
