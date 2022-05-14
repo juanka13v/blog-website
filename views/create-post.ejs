@@ -8,20 +8,20 @@
 <main class="container">
 
   <div class="dashboard">
-    <form>
+    <form action="/create-post" method="post">
       <div class="form-field">
-        <label>Title :</label>
-        <input type="text" placeholder="Enter a title" />
+        <label for="title">Title :</label>
+        <input type="text" placeholder="Enter a title" id="title" name="title" />
       </div>
       <div class="form-field">
-        <label>Description :</label>
-        <input type="text" placeholder="Enter a description" />
+        <label for="description">Description :</label>
+        <input type="text" placeholder="Enter a description" id="description" name="description" />
       </div>
       <div class="form-field">
-        <label>Markdown :</label>
+        <label for="markdown">Markdown :</label>
         <textarea
-          name=""
-          id=""
+          name="markdown"
+          id="markdown"
           cols="30"
           rows="10"
           placeholder="Enter a markdown sintax"

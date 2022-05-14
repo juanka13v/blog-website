@@ -1,0 +1,74 @@
+<%- include('includes/header') %> 
+
+<%- include('includes/title-nav',{title: 'Authors', links:[
+    {name:"home", ref:'/'},
+    {name:"authors", ref:'/authors'}
+]}) %> 
+
+<div class="container authors-container">
+
+    <% authors.forEach(author => { %>
+        <a class="card-author" href="/author/<%= author._id %>">
+            <figure class="card-author-img">
+                <i class="bx bxs-user-rectangle"></i>
+            </figure>
+            <div class="card-author-info">
+                <h3><%= author.author %></h3>
+                <span>
+                    <i class='bx bx-receipt'></i>
+                    <p><%= author.posts.length %> posts</p>
+                </span>
+            </div>
+        </a>
+    <% }) %>
+    <a class="card-author" href="/">
+        <figure class="card-author-img">
+            <i class="bx bxs-user-rectangle"></i>
+        </figure>
+        <div class="card-author-info">
+            <h3>Juan Valero</h3>
+            <span>
+                <i class='bx bx-receipt'></i>
+                <p>15 posts</p>
+            </span>
+        </div>
+    </a>
+    <div class="card-author">
+        <figure class="card-author-img">
+            <i class="bx bxs-user-rectangle"></i>
+        </figure>
+        <div class="card-author-info">
+            <h3>Juan Valero</h3>
+            <span>
+                <i class='bx bx-receipt'></i>
+                <p>15 posts</p>
+            </span>
+        </div>
+    </div>
+    <div class="card-author">
+        <figure class="card-author-img">
+            <i class="bx bxs-user-rectangle"></i>
+        </figure>
+        <div class="card-author-info">
+            <h3>Juan Valero</h3>
+            <span>
+                <i class='bx bx-receipt'></i>
+                <p>15 posts</p>
+            </span>
+        </div>
+    </div>
+    <div class="card-author">
+        <figure class="card-author-img">
+            <i class="bx bxs-user-rectangle"></i>
+        </figure>
+        <div class="card-author-info">
+            <h3>Juan Valero</h3>
+            <span>
+                <i class='bx bx-receipt'></i>
+                <p>15 posts</p>
+            </span>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %> 

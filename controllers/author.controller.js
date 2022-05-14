@@ -1,5 +1,5 @@
-const Author = require('../models/Author')
-const {navs} = require('../helpers/navGenerator')
+const Author = require("../models/Author");
+const { navs } = require("../helpers/navGenerator");
 
 const author = async (req, res) => {
   const id = req.params.id;
@@ -28,6 +28,16 @@ const author = async (req, res) => {
   }
 };
 
+const authors = async (req, res) => {
+  try {
+    const authors = await Author.find();
+    res.render("authorsPage", { title: "Blog | Authors", authors });
+  } catch (e) {
+    res.render("errorPage", { title: "Blog | Error" });
+  }
+};
+
 module.exports = {
-    author
-}
+  author,
+  authors
+};

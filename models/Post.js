@@ -1,4 +1,9 @@
 const { Schema, model } = require("mongoose");
+const {marked} = require("marked");
+const slugify = require("slugify");
+const createDomPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
+const dompurify = createDomPurify(new JSDOM().window);
 
 const postSchema = Schema({
   title: {
@@ -19,7 +24,7 @@ const postSchema = Schema({
     required: true,
   },
   min: {
-    type: Number
+    type: Number,
   },
   author: {
     type: Schema.Types.ObjectId,
@@ -35,6 +40,17 @@ const postSchema = Schema({
       required: true,
     },
   ],
+  sanitizedHtml: {
+    type: String,
+  },
+});
+
+postSchema.pre("validate", function (next) {
+  if (this.markdown) {
+    this.sanitizedHtml = dompurify.sanitize(marked(this.markdown));
+  }
+
+  next();
 });
 
 module.exports = model("Post", postSchema);

@@ -6,7 +6,6 @@ const post = async (req, res) => {
 
   try {
     const post = await Post.findById(id).populate("author");
-    console.log(post);
     res.render("post", { title: "Blog | Post", post });
   } catch (e) {
     res.render("errorPage", { title: "Blog | Error" });
@@ -27,7 +26,7 @@ const posts = async (req, res) => {
     info.totalPosts = totalPosts;
     info.page = Number(req.query.page) || 1;
     info.limit = Number(req.query.limit) || 10;
-    info.pages = info.totalPosts / info.limit;
+    info.pages = (info.totalPosts <= info.limit) ? 1 : Math.floor(info.totalPosts / info.limit) + 1;
     info.next = info.page == info.pages ? null : info.page + 1;
     info.prev = info.page == 1 ? null : info.page - 1;
     info.nav = navs(info.page, info.pages);
@@ -39,18 +38,19 @@ const posts = async (req, res) => {
       .limit(info.limit)
       .skip((info.page - 1) * info.limit);
 
-    
-
-    console.log(posts);
-    console.log(options.tag);
-
     res.render("search", { title: "Blog | Search", posts, info });
   } catch (e) {
     res.render("errorPage", { title: "Blog | Error" });
   }
 };
 
+const createPost = (req, res) => {
+  console.log(req.body);
+  res.redirect('/dashboard')
+}
+
 module.exports = {
   post,
   posts,
+  createPost
 };

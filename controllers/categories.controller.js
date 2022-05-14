@@ -23,7 +23,7 @@ const category = async (req, res) => {
     info.totalPosts = totalPosts;
     info.page = Number(req.query.page) || 1;
     info.limit = Number(req.query.limit) || 10;
-    info.pages = Math.floor(info.totalPosts / info.limit) + 1;
+    info.pages = (info.totalPosts <= info.limit) ? 1 : Math.floor(info.totalPosts / info.limit) + 1;
     info.next = info.page == info.pages ? null : info.page + 1;
     info.prev = info.page == 1 ? null : info.page - 1;
     info.nav = navs(info.page, info.pages);

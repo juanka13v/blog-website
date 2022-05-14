@@ -1,7 +1,6 @@
 const Category = require("../models/Category");
 const Post = require("../models/Post");
 const Tag = require("../models/Tag");
-const Author = require("../models/Author");
 const { navs } = require("../helpers/navGenerator");
 
 const home = async (req, res) => {
@@ -13,7 +12,7 @@ const home = async (req, res) => {
     info.totalPosts = totalPosts;
     info.page = Number(req.query.page) || 1;
     info.limit = Number(req.query.limit) || 10;
-    info.pages = info.totalPosts / info.limit;
+    info.pages = (info.totalPosts <= info.limit) ? 1 : Math.floor(info.totalPosts / info.limit) + 1;
     info.next = info.page == info.pages ? null : info.page + 1;
     info.prev = info.page == 1 ? null : info.page - 1;
     info.nav = navs(info.page, info.pages);
@@ -26,14 +25,14 @@ const home = async (req, res) => {
 
     res.render("home", { title: "Blog | Home", categories, posts, info, tags });
   } catch (e) {
-    console.log(e);
     res.render("errorPage", { title: "Blog | error" });
   }
 };
 
 const dashboard = (req, res) => {
-  res.render("dashboard", { title: "Blog | Dashboard" });
+  res.render("create-post", { title: "Blog | Dashboard" });
 };
+
 
 const tags = async (req, res) => {
   const abc = [

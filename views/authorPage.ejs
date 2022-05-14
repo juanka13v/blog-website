@@ -12,8 +12,8 @@
     <div class="author-info">
       <h2>Ricardo Martinez</h2>
       <span>6273d927cc1a2ab8eafb1226</span>
-      <span><i class='bx bx-calendar'></i> 13/4/1999</span>
-      <span><i class='bx bx-receipt'></i> 15 posts</span>
+      <span><i class='bx bx-calendar'></i> <p>13/4/1999</p></span>
+      <span><i class='bx bx-receipt'></i> <p>15 posts</p></span>
       <h3>Description:</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A pariatur
@@ -24,7 +24,8 @@
     </div>
   </div>
   <div class="author-body">
-      <%- include('includes/posts',{ posts:author.posts, info, ref: "/author"}) %> 
+    <%- include('includes/title-nav',{title: "posts", links:[]}) %> 
+    <%- include('includes/posts',{ posts:author.posts, info, ref: "/author"}) %> 
   </div>
 </main>
 

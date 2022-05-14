@@ -14,6 +14,7 @@ const apiTagRoute = require("./routes/tag.api.route");
 
 
 const { formatDate } = require("./helpers/changeDate");
+const Post = require("./models/Post");
 
 
 const app = express();
@@ -21,7 +22,7 @@ const app = express();
 app.locals.formatDate = formatDate;
 
 // Middlewares
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("tiny"));
@@ -38,6 +39,16 @@ app.use("/public", express.static("./public/"));
 
 
 app.use("/", mainRoute);
+
+app.get("/test", async (req, res) => {
+  const id = '627fc9c913f763bd3a5377e4'
+  try {
+    const post = await Post.findById(id);
+    res.render("test", {title: "test", post})
+  } catch (e) {
+    console.log(e);
+  }
+})
 
 app.get("*", function (req, res) {
   res.status(404).render("404", { title: "Blog | Page not found" });
