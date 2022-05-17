@@ -38,6 +38,7 @@ const posts = async (req, res) => {
       .limit(info.limit)
       .skip((info.page - 1) * info.limit);
 
+
     res.render("search", { title: "Blog | Search", posts, info });
   } catch (e) {
     res.render("errorPage", { title: "Blog | Error" });
@@ -45,6 +46,9 @@ const posts = async (req, res) => {
 };
 
 const createPost = (req, res) => {
+  let min = parseInt(req.body.min)
+  req.body.min = min
+
   console.log(req.body);
   res.redirect('/dashboard')
 }

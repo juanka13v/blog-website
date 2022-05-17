@@ -1,22 +1,65 @@
 <%- include('./includes/header.ejs') %>
-
-<%- include('includes/title-nav', {title: "dashboard", links: [
-  {name: "home",ref: "/"},
-  {name: "dashboard",ref: "/dashboard"}
-]}) %>
+<%- include('includes/title-nav',
+{title: "dashboard", links: [ {name: "home",ref: "/"}, {name: "dashboard",ref:
+"/dashboard"} ]}) %>
 
 <main class="container">
-
   <div class="dashboard">
     <form action="/create-post" method="post">
       <div class="form-field">
         <label for="title">Title :</label>
-        <input type="text" placeholder="Enter a title" id="title" name="title" />
+        <input
+          type="text"
+          placeholder="Enter a title"
+          id="title"
+          name="title"
+        />
       </div>
       <div class="form-field">
         <label for="description">Description :</label>
-        <input type="text" placeholder="Enter a description" id="description" name="description" />
+        <input
+          type="text"
+          placeholder="Enter a description"
+          id="description"
+          name="description"
+        />
       </div>
+      <div class="form-field select">
+        <label for="category">Choose a category:</label>
+        <select name="category" id="category">
+          <option value="" selected disabled>-- select a category --</option>
+          <% categories.forEach( category => { %>
+            <option value="<%- category.name %>"><%- category.name %></option>
+          <% }) %>  
+        </select>
+      </div>
+      <div class="form-field select">
+        <label for="author">Choose an author:</label>
+        <select name="author" id="author">
+          <option value="" selected disabled>-- select an author --</option>
+          <% authors.forEach( author => { %>
+            <option value="<%- author._id %>"><%- author.author %></option>
+          <% }) %>  
+        </select>
+      </div>
+
+      <div class="form-field">
+        <h4>Tags:</h4>
+        <div class="form-tags">
+          <% tags.forEach(tag => { %>
+            <span>
+              <input type="checkbox" id="<%= tag.name %>" name="tags" value="<%= tag.name %>">
+              <label for="<%= tag.name %>"><%= tag.name %></label>
+            </span>
+          <% }) %>
+        </div>
+      </div>
+
+      <div class="form-field min">
+        <label for="min" id="min" >Min of read:</label>
+        <input type="number" id="min" name="min">
+      </div>
+
       <div class="form-field">
         <label for="markdown">Markdown :</label>
         <textarea
@@ -32,7 +75,5 @@
     </form>
   </div>
 </main>
-
-
 
 <%- include('./includes/footer.ejs') %>
