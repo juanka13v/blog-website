@@ -1,33 +1,29 @@
-<%- include('includes/header') %> 
-
-
-<%- include('includes/title-nav', {title: "All Tags", links: [
-    {name:"home", ref:"/"},
-    {name:"tags", ref:"/tags"}
-]}) %> 
+<%- include('includes/header') %>
+<%- include('includes/title-nav', {
+    title: "AllTags", 
+    links: [ 
+        {name:"home", ref:"/"}, 
+        {name:"tags", ref:"/tags"} 
+      ]
+    }) %>
 
 <section class="tags_page-container container">
-    <ul class="tags-header">
-       <% abc.forEach(item => { %>  
-        <a href="/tags?s=<%= item %>">
-            <li>
-                <%= item %>
-            </li>
-        </a>
-       <% }) %>  
-    </ul>
+  <ul class="tags-header">
+    <% abc.forEach(item => { %>
+      <a href="/tags?s=<%= item %>">
+        <li><%= item %></li>
+      </a>
+    <% }) %>
+  </ul>
 
-    <div class="tags-body">
-        <% for (let i = 0; i < 30; i++) { %> 
-            <span>
-                <i class='bx bxs-purchase-tag'></i>
-                <a href="/posts?tag=river">river</a>
-            </span>
-        <% } %> 
-    </div>
+  <div class="tags-body">
+    <% for (let i = 0; i < 30; i++) { %>
+      <span>
+        <i class="bx bxs-purchase-tag"></i>
+        <a href="/posts?tag=river">river</a>
+      </span>
+    <% } %>
+  </div>
 </section>
 
-
-
-
-<%- include('includes/footer') %> 
+<%- include('includes/footer') %>

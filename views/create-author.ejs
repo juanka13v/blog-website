@@ -1,0 +1,49 @@
+<%- include('./includes/header.ejs') %>
+<%- include('includes/title-nav', {
+  title: "create author",
+  links: [
+    {name: "home",ref: "/"},
+    {name: "create",ref:"/create-author"}
+  ]
+}) %>
+
+<main class="container">
+  <div class="create-author">
+    <form action="/create-author" method="post">
+      <div class="form-field">
+        <label for="author">Name :</label>
+        <input
+          type="text"
+          placeholder="Enter a title"
+          id="author"
+          name="author"
+        />
+      </div>
+      <div class="form-field">
+        <label for="description">Description :</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Enter a description"
+        ></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email :</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+        />
+      </div>
+      
+    
+
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</main>
+
+<%- include('./includes/footer.ejs') %>

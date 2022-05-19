@@ -1,0 +1,69 @@
+.create-author {
+    padding: 2rem 1rem;
+    @media screen and (max-width: $mb) {
+      padding: 2rem 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.3rem;
+  
+       
+  
+  
+        
+  
+        label {
+          margin-bottom: 0.2rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+  
+        input {
+          height: 35px;
+          background: none;
+          border: 2px solid $color-black;
+          font-size: 18px;
+  
+          &[type="text"] {
+            padding-left: 0.5rem;
+          }
+
+          &[type="date"] {
+              height: 25px;
+              padding: 3px;
+              font-size: .9rem;
+              max-width: min-content;
+          }
+  
+          &::placeholder {
+            height: 20px;
+            color: $color-gray;
+            font-family: $ff-2;
+            font-weight: 300;
+            padding-left: 0.5rem;
+          }
+        }
+
+        textarea {
+            resize: none;
+            width: 100%;
+            border: 2px solid $color-black;
+            padding-left: 0.5rem;
+            padding-top: 0.5rem;
+            background: none;
+            font-size: 18px;
+    
+            &::placeholder {
+              font-family: $ff-2;
+              font-size: 18px;
+            }
+          }  
+      }
+    }
+  }
+  

@@ -80,7 +80,8 @@ header {
     @media screen and (max-width: 769px) {
       header .menu ul {
         flex-direction: column;
-        align-items: center; } }
+        align-items: center;
+        align-content: baseline; } }
     header .menu ul li {
       list-style: none;
       margin: 0 8px;
@@ -313,56 +314,56 @@ footer .social-links ul {
         font-weight: 300;
         color: var(--color-gray); }
 
-.dashboard {
+.create-post {
   padding: 2rem 1rem; }
   @media screen and (max-width: 420px) {
-    .dashboard {
+    .create-post {
       padding: 2rem 0; } }
-  .dashboard form {
+  .create-post form {
     display: flex;
     flex-direction: column; }
-    .dashboard form .form-field {
+    .create-post form .form-field {
       display: flex;
       flex-direction: column;
       margin-bottom: 1.3rem; }
-      .dashboard form .form-field.select {
+      .create-post form .form-field.select {
         max-width: 300px; }
-        .dashboard form .form-field.select label {
+        .create-post form .form-field.select label {
           font-size: 1rem; }
-      .dashboard form .form-field.min label {
+      .create-post form .form-field.min label {
         font-size: 1rem; }
-      .dashboard form .form-field.min input {
+      .create-post form .form-field.min input {
         max-width: 50px;
         font-size: 1rem;
         height: 30px;
         border: 2px solid #000; }
-      .dashboard form .form-field label {
+      .create-post form .form-field label {
         margin-bottom: 0.2rem;
         font-size: 1.2rem;
         font-weight: 600; }
-      .dashboard form .form-field input {
+      .create-post form .form-field input {
         height: 35px;
         background: none;
         border: 2px solid #000;
         font-size: 18px; }
-        .dashboard form .form-field input[type="text"] {
+        .create-post form .form-field input[type="text"] {
           padding-left: 0.5rem; }
-        .dashboard form .form-field input::placeholder {
+        .create-post form .form-field input::placeholder {
           height: 20px;
           color: #535351;
           font-family: "Poppins", sans-serif;
           font-weight: 300;
           padding-left: 0.5rem; }
-      .dashboard form .form-field select {
+      .create-post form .form-field select {
         height: 28px;
         background: none;
         border: 2px solid #000;
         font-size: 16px; }
-        .dashboard form .form-field select[type="text"] {
+        .create-post form .form-field select[type="text"] {
           padding-left: 0.5rem; }
-      .dashboard form .form-field option {
+      .create-post form .form-field option {
         font-size: .9rem; }
-      .dashboard form .form-field textarea {
+      .create-post form .form-field textarea {
         resize: none;
         width: 100%;
         border: 2px solid #000;
@@ -370,22 +371,68 @@ footer .social-links ul {
         padding-top: 0.5rem;
         background: none;
         font-size: 18px; }
-        .dashboard form .form-field textarea::placeholder {
+        .create-post form .form-field textarea::placeholder {
           font-family: "Poppins", sans-serif;
           font-size: 18px; }
-      .dashboard form .form-field .form-tags {
+      .create-post form .form-field .form-tags {
         display: flex;
         flex-wrap: wrap; }
-        .dashboard form .form-field .form-tags span {
+        .create-post form .form-field .form-tags span {
           max-width: max-content;
           display: flex;
           align-items: center;
           margin-right: 10px; }
-          .dashboard form .form-field .form-tags span input {
+          .create-post form .form-field .form-tags span input {
             margin-right: 5px; }
-          .dashboard form .form-field .form-tags span label {
+          .create-post form .form-field .form-tags span label {
             font-size: 15px;
             font-weight: 400; }
+
+.create-author {
+  padding: 2rem 1rem; }
+  @media screen and (max-width: 420px) {
+    .create-author {
+      padding: 2rem 0; } }
+  .create-author form {
+    display: flex;
+    flex-direction: column; }
+    .create-author form .form-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.3rem; }
+      .create-author form .form-field label {
+        margin-bottom: 0.2rem;
+        font-size: 1.2rem;
+        font-weight: 600; }
+      .create-author form .form-field input {
+        height: 35px;
+        background: none;
+        border: 2px solid #000;
+        font-size: 18px; }
+        .create-author form .form-field input[type="text"] {
+          padding-left: 0.5rem; }
+        .create-author form .form-field input[type="date"] {
+          height: 25px;
+          padding: 3px;
+          font-size: .9rem;
+          max-width: min-content; }
+        .create-author form .form-field input::placeholder {
+          height: 20px;
+          color: #535351;
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+          padding-left: 0.5rem; }
+      .create-author form .form-field textarea {
+        resize: none;
+        width: 100%;
+        border: 2px solid #000;
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+        background: none;
+        font-size: 18px; }
+        .create-author form .form-field textarea::placeholder {
+          font-family: "Poppins", sans-serif;
+          font-size: 18px; }
 
 .post {
   border: 2px solid #000;
@@ -985,6 +1032,11 @@ footer .social-links ul {
       .author-container .author-header .author-info p {
         font-size: 0.9rem;
         color: #535351; }
+  .author-container .author-body .not-posts {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center; }
 
 .authors-container {
   border: 1px solid bisque;

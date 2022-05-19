@@ -15,6 +15,9 @@ const authorSchema = Schema({
       ref: "Post",
     },
   ],
+  email: {
+    type: String,
+  }
 });
 
 module.exports = model("Author", authorSchema);

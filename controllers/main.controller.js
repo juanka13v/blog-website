@@ -35,26 +35,7 @@ const home = async (req, res) => {
   }
 };
 
-const dashboard = async (req, res) => {
-  try {
-    const categories = await Category.find();
-    const tags = await Tag.find();
-    const authors = await Author.find();
 
-    // console.log(categories);
-    // console.log(tags);
-    // console.log(authors);
-
-    res.render("create-post", {
-      title: "Blog | Dashboard",
-      tags,
-      authors,
-      categories,
-    });
-  } catch (e) {
-    res.render('errorPage', {title: "Blog | Error"})
-  }
-};
 
 const tags = async (req, res) => {
   const abc = [
@@ -96,6 +77,5 @@ const tags = async (req, res) => {
 
 module.exports = {
   home,
-  dashboard,
   tags,
 };

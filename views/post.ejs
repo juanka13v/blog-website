@@ -8,7 +8,7 @@
 
 <main class="single-container container">
     <div class="single-header">
-      <h3>The AGI hype train is running out of steam</h3>
+      <h3><%= post.title %> </h3>
       <div class="single-info">
         <div class="user">
           <i class="bx bx-user-circle"></i>
@@ -23,29 +23,8 @@
       </div>
     </div>
     <div class="single-body">
-      <h3>The AGI hype train has hit some heavy traffic.</h3>
-      <p>
-        While futurists and fundraisers used to make bullish predictions about
-        artificial general intelligence, they’ve become quieter lately. Peter
-        Thiel — the tech billionaire and rumored vampire — says Silicon Valley
-        big brains have lost enthusiasm for AGI.
-      </p>
-      <p>
-        “Elon’s not talking about it anymore and Larry Page is off to Fiji and
-        doesn’t seem to be working on it quite as hard,” Thiel said at a
-        recent event.
-      </p>
-      <p>
-        While futurists and fundraisers used to make bullish predictions about
-        artificial general intelligence, they’ve become quieter lately. Peter
-        Thiel — the tech billionaire and rumored vampire — says Silicon Valley
-        big brains have lost enthusiasm for AGI.
-      </p>
-      <h3>IT is healing</h3>
-      <p>
-        Thiel described Musk as “a weathervane for the zeitgeist,” who’s
-        stopped talking about AGI because interest has declined.
-      </p>
+      
+      <%- post.sanitizedHtml %>
 
       <div class="tags">
         <p>Tags:</p>

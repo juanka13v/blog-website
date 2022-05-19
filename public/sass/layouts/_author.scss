@@ -63,5 +63,13 @@
   }
 
   .author-body {
+
+    .not-posts {
+      display: flex;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 }

@@ -1,10 +1,14 @@
 <%- include('./includes/header.ejs') %>
-<%- include('includes/title-nav',
-{title: "dashboard", links: [ {name: "home",ref: "/"}, {name: "dashboard",ref:
-"/dashboard"} ]}) %>
+<%- include('includes/title-nav', {
+  title: "create post",
+  links: [
+    {name: "home",ref: "/"},
+    {name: "create",ref:"/create-post"}
+  ]
+}) %>
 
 <main class="container">
-  <div class="dashboard">
+  <div class="create-post">
     <form action="/create-post" method="post">
       <div class="form-field">
         <label for="title">Title :</label>
@@ -57,7 +61,7 @@
 
       <div class="form-field min">
         <label for="min" id="min" >Min of read:</label>
-        <input type="number" id="min" name="min">
+        <input type="number" id="min" name="min" min="1" max="60" placeholder="5">
       </div>
 
       <div class="form-field">
