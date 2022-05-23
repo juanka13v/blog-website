@@ -1,7 +1,7 @@
 const Author = require("../models/Author");
-const { navs } = require("../helpers/navGenerator");
+const { createInfo } = require("../helpers/info");
 
-const author = async (req, res) => {
+const showAuthor = async (req, res) => {
   const id = req.params.id;
   const author = await Author.findById(id).populate({
     path: "posts",
@@ -11,18 +11,9 @@ const author = async (req, res) => {
     },
   });
   const totalPosts = author.posts.length;
-  const info = {};
+  const info = createInfo(totalPosts, req) 
 
-  info.totalPosts = totalPosts;
-  info.page = Number(req.query.page) || 1;
-  info.limit = Number(req.query.limit) || 10;
-  info.pages =
-    info.totalPosts <= info.limit
-      ? 1
-      : Math.floor(info.totalPosts / info.limit) + 1;
-  info.next = info.page == info.pages ? null : info.page + 1;
-  info.prev = info.page == 1 ? null : info.page - 1;
-  info.nav = navs(info.page, info.pages);
+  
 
   try {
     res.render("authorPage", { title: "Blog | Author", author, info });
@@ -31,7 +22,7 @@ const author = async (req, res) => {
   }
 };
 
-const authors = async (req, res) => {
+const showAuthors = async (req, res) => {
   try {
     const authors = await Author.find();
     res.render("authorsPage", { title: "Blog | Authors", authors });
@@ -61,8 +52,8 @@ const createAuthor = async (req, res) => {
 };
 
 module.exports = {
-  author,
-  authors,
+  showAuthor,
+  showAuthors,
   showCreateAuthor,
   createAuthor,
 };

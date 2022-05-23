@@ -30,7 +30,12 @@
           max-width: 50px;
           font-size: 1rem;
           height: 30px;
-          border: 2px solid $color-black;
+          border: 1px solid $color-black;
+
+          &:focus {
+            border: 1px solid $color-black;
+            outline: none;
+          }
         }
       }
 
@@ -43,7 +48,7 @@
       input {
         height: 35px;
         background: none;
-        border: 2px solid $color-black;
+        border: 1px solid $color-black;
         font-size: 18px;
 
         &[type="text"] {
@@ -57,16 +62,26 @@
           font-weight: 300;
           padding-left: 0.5rem;
         }
+
+        &:focus {
+          border: 1px solid $color-black;
+          outline: none;
+        }
       }
 
       select {
         height: 28px;
         background: none;
-        border: 2px solid $color-black;
+        border: 1px solid $color-black;
         font-size: 16px;
 
         &[type="text"] {
           padding-left: 0.5rem;
+        }
+
+        &:focus {
+          border: 1px solid $color-black;
+          outline: none;
         }
         
       }
@@ -78,7 +93,7 @@
       textarea {
         resize: none;
         width: 100%;
-        border: 2px solid $color-black;
+        border: 1px solid $color-black;
         padding-left: 0.5rem;
         padding-top: 0.5rem;
         background: none;
@@ -87,13 +102,11 @@
         &::placeholder {
           font-family: $ff-2;
           font-size: 18px;
-          // padding-left: 0.5rem;
-          // padding-top: 0.5rem;
         }
 
-        &[type="text"] {
-          // padding-left: 0.5rem;
-          // padding-top: 0.5rem;
+        &:focus {
+          border: 1px solid $color-black;
+          outline: none;
         }
       }
 

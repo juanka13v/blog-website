@@ -226,13 +226,13 @@ footer .social-links ul {
       .contact .contact-form .form-field input {
         background: none;
         outline: none;
-        border: 2px solid #000;
+        border: 1px solid #000;
         height: 40px;
         font-size: 18px; }
       .contact .contact-form .form-field textarea {
         background: none;
         outline: none;
-        border: 2px solid #000;
+        border: 1px solid #000;
         resize: none; }
   .contact .contact-content {
     width: 50%;
@@ -336,7 +336,10 @@ footer .social-links ul {
         max-width: 50px;
         font-size: 1rem;
         height: 30px;
-        border: 2px solid #000; }
+        border: 1px solid #000; }
+        .create-post form .form-field.min input:focus {
+          border: 1px solid #000;
+          outline: none; }
       .create-post form .form-field label {
         margin-bottom: 0.2rem;
         font-size: 1.2rem;
@@ -344,7 +347,7 @@ footer .social-links ul {
       .create-post form .form-field input {
         height: 35px;
         background: none;
-        border: 2px solid #000;
+        border: 1px solid #000;
         font-size: 18px; }
         .create-post form .form-field input[type="text"] {
           padding-left: 0.5rem; }
@@ -354,19 +357,25 @@ footer .social-links ul {
           font-family: "Poppins", sans-serif;
           font-weight: 300;
           padding-left: 0.5rem; }
+        .create-post form .form-field input:focus {
+          border: 1px solid #000;
+          outline: none; }
       .create-post form .form-field select {
         height: 28px;
         background: none;
-        border: 2px solid #000;
+        border: 1px solid #000;
         font-size: 16px; }
         .create-post form .form-field select[type="text"] {
           padding-left: 0.5rem; }
+        .create-post form .form-field select:focus {
+          border: 1px solid #000;
+          outline: none; }
       .create-post form .form-field option {
         font-size: .9rem; }
       .create-post form .form-field textarea {
         resize: none;
         width: 100%;
-        border: 2px solid #000;
+        border: 1px solid #000;
         padding-left: 0.5rem;
         padding-top: 0.5rem;
         background: none;
@@ -374,6 +383,9 @@ footer .social-links ul {
         .create-post form .form-field textarea::placeholder {
           font-family: "Poppins", sans-serif;
           font-size: 18px; }
+        .create-post form .form-field textarea:focus {
+          border: 1px solid #000;
+          outline: none; }
       .create-post form .form-field .form-tags {
         display: flex;
         flex-wrap: wrap; }
@@ -435,7 +447,7 @@ footer .social-links ul {
           font-size: 18px; }
 
 .post {
-  border: 2px solid #000;
+  border: 1px solid #000;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem;
@@ -526,7 +538,6 @@ footer .social-links ul {
           cursor: pointer; }
 
 .single-container {
-  border: 1px solid red;
   max-width: 800px;
   padding-top: 2rem;
   padding-bottom: 2rem; }
@@ -629,7 +640,7 @@ footer .social-links ul {
           transform: scale(1.4); }
 
 .aside-container {
-  border: 2px #000 solid;
+  border: 1px #000 solid;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -881,7 +892,7 @@ footer .social-links ul {
 
 .tags-container {
   margin-top: 2rem;
-  border: 2px #000 solid;
+  border: 1px #000 solid;
   display: flex;
   flex-direction: column;
   width: 100%;

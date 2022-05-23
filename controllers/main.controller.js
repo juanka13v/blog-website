@@ -27,8 +27,6 @@ const home = async (req, res) => {
       .limit(info.limit)
       .skip((info.page - 1) * info.limit);
 
-    console.log(posts);
-
     res.render("home", { title: "Blog | Home", categories, posts, info, tags });
   } catch (e) {
     res.render("errorPage", { title: "Blog | error" });

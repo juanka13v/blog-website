@@ -2,7 +2,7 @@ const Post = require("../models/Post");
 const Author = require("../models/Author");
 const Category = require("../models/Category");
 const Tag = require("../models/Tag");
-const { navs } = require("../helpers/navGenerator");
+const { createInfo } = require("../helpers/info");
 
 const showPost = async (req, res) => {
   const id = req.params.id;
@@ -17,26 +17,14 @@ const showPost = async (req, res) => {
 
 const showPosts = async (req, res) => {
   try {
-    const info = {};
     const options = {};
+    var regex = new RegExp(req.query.search, "i");
 
-    if (req.query.tag) {
-      options.tags = req.query.tag;
-    }
+    if (req.query.tag) options.tags = req.query.tag;
+    if (req.query.search) options.title = regex;
 
     const totalPosts = await Post.find(options).count();
-
-    info.totalPosts = totalPosts;
-    info.page = Number(req.query.page) || 1;
-    info.limit = Number(req.query.limit) || 10;
-    info.pages =
-      info.totalPosts <= info.limit
-        ? 1
-        : Math.floor(info.totalPosts / info.limit) + 1;
-    info.next = info.page == info.pages ? null : info.page + 1;
-    info.prev = info.page == 1 ? null : info.page - 1;
-    info.nav = navs(info.page, info.pages);
-    info.tag = req.query.tag;
+    const info = createInfo(totalPosts, req);
 
     const posts = await Post.find(options)
       .populate("author")
@@ -45,6 +33,7 @@ const showPosts = async (req, res) => {
 
     res.render("search", { title: "Blog | Search", posts, info });
   } catch (e) {
+    console.log(e);
     res.render("errorPage", { title: "Blog | Error" });
   }
 };
@@ -73,17 +62,35 @@ const createPost = async (req, res) => {
 
     const post = new Post(req.body);
     const author = await Author.updateOne(
-      { _id: post.author }, 
-      { $push: { posts: post._id } },
+      { _id: post.author },
+      { $push: { posts: post._id } }
     );
 
     const savePost = await post.save();
 
-    console.log(savePost);
-
     res.redirect(`/posts/${post._id}`);
   } catch (e) {
-    res.render("errorPage", {title:"Blog | Error"})
+    res.render("errorPage", { title: "Blog | Error" });
+  }
+};
+
+const searchPosts = async (req, res) => {
+  try {
+    const search = req.query.search
+    console.log(search);
+    // const totalPosts = await Post.find(options).count();
+    // const info = createInfo(totalPosts, req);
+
+    // const posts = await Post.find()
+    //   .populate("author")
+    //   .limit(info.limit)
+    //   .skip((info.page - 1) * info.limit);
+
+    // res.render("search", { title: "Blog | Search", posts, info });
+    res.render("errorPage", { title: "Blog | Error" });
+  } catch (e) {
+    console.log(e);
+    res.render("errorPage", { title: "Blog | Error" });
   }
 };
 
@@ -92,4 +99,5 @@ module.exports = {
   showPosts,
   showCreatePost,
   createPost,
+  searchPosts
 };
