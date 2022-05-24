@@ -102,7 +102,11 @@ header {
         display: initial; }
       header .menu ul li ul {
         position: absolute;
-        top: 30px;
+        background-color: #f9f4ec;
+        z-index: 9999;
+        border: 0.7px solid #000;
+        padding: .5rem 0;
+        top: 25px;
         right: 0;
         left: 0;
         width: max-content;
@@ -112,7 +116,8 @@ header {
         transition: all 0.3s ease; }
         @media screen and (max-width: 769px) {
           header .menu ul li ul {
-            position: initial; } }
+            position: initial;
+            border: none; } }
         header .menu ul li ul li {
           margin-bottom: 10px; }
       header .menu ul li button a {
@@ -229,11 +234,19 @@ footer .social-links ul {
         border: 1px solid #000;
         height: 40px;
         font-size: 18px; }
+        .contact .contact-form .form-field input:invalid {
+          border: 1px solid #e14848; }
+        .contact .contact-form .form-field input:valid {
+          border: 1px solid #50ca50; }
       .contact .contact-form .form-field textarea {
         background: none;
         outline: none;
         border: 1px solid #000;
         resize: none; }
+        .contact .contact-form .form-field textarea:invalid {
+          border: 1px solid #e14848; }
+        .contact .contact-form .form-field textarea:valid {
+          border: 1px solid #50ca50; }
   .contact .contact-content {
     width: 50%;
     padding: 2rem 1rem;
@@ -419,7 +432,7 @@ footer .social-links ul {
       .create-author form .form-field input {
         height: 35px;
         background: none;
-        border: 2px solid #000;
+        border: 1px solid #000;
         font-size: 18px; }
         .create-author form .form-field input[type="text"] {
           padding-left: 0.5rem; }
@@ -437,7 +450,7 @@ footer .social-links ul {
       .create-author form .form-field textarea {
         resize: none;
         width: 100%;
-        border: 2px solid #000;
+        border: 1px solid #000;
         padding-left: 0.5rem;
         padding-top: 0.5rem;
         background: none;
@@ -784,15 +797,18 @@ footer .social-links ul {
   align-items: center;
   padding: 1rem 0; }
   .title-container .title {
-    width: max-content; }
+    width: auto; }
     .title-container .title h3 {
       font-size: 1.5rem;
-      border-bottom: 2px solid #000;
-      text-transform: capitalize; }
+      padding: 0 1rem;
+      text-decoration: 2px solid #000 underline;
+      text-transform: capitalize;
+      white-space: initial; }
   .title-container .nav-title {
     margin-top: 1.5rem;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding: 0 1rem; }
     .title-container .nav-title p {
       margin-right: 2px;
       text-transform: capitalize; }

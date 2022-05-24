@@ -3,6 +3,7 @@ require("./models/db");
 const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const cors  = require("cors");
 const port = process.env.PORT || 3000;
 
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("tiny"));
+app.use(cors());
 
 app.set("view engine", "ejs");
 

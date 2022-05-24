@@ -1,8 +1,5 @@
-<%- include('includes/header') %>
-
-<%- include('includes/title-nav', {title: "contact", links: [
-  {name: "home",ref: "/"},
-  {name: "contact",ref: "/contact"}
+<%- include('includes/header') %> <%- include('includes/title-nav', {title:
+"contact", links: [ {name: "home",ref: "/"}, {name: "contact",ref: "/contact"}
 ]}) %>
 
 <main class="container">
@@ -10,19 +7,24 @@
     <form class="contact-form">
       <div class="form-field">
         <label for="">Name:</label>
-        <input type="text" placeholder="Enter your name" />
+        <input required type="text" placeholder="Enter your name" />
       </div>
       <div class="form-field">
         <label for="">email:</label>
-        <input type="text" placeholder="Enter your email" />
+        <input
+          required
+          type="text"
+          placeholder="Enter your email"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        />
       </div>
       <div class="form-field">
         <label for="">Asunto:</label>
-        <input type="text" placeholder="Enter subject" />
+        <input required type="text" placeholder="Enter subject" />
       </div>
       <div class="form-field">
         <label for="">Message:</label>
-        <textarea cols="30" rows="10"></textarea>
+        <textarea required cols="30" rows="10"></textarea>
       </div>
       <button class="btn">Enviar</button>
     </form>
@@ -34,8 +36,8 @@
       <div class="contact-text">
         <h3>If you want to contact us</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
-          non ullam. Quas minus vel voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, non
+          ullam. Quas minus vel voluptates!
         </p>
       </div>
     </div>

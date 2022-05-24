@@ -77,7 +77,11 @@ header {
 
       ul {
         position: absolute;
-        top: 30px;
+        background-color: $color-bg;
+        z-index: 9999;
+        border: .7px solid $color-black;
+        padding: .5rem 0;
+        top: 25px;
         right: 0;
         left: 0;
         width: max-content;
@@ -87,6 +91,7 @@ header {
         transition: all 0.3s ease;
         @media screen and (max-width:769px) {
           position: initial;
+          border: none;
         }
 
         li {

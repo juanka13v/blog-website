@@ -46,6 +46,14 @@
         border: 1px solid $color-black;
         height: 40px;
         font-size: 18px;
+
+        &:invalid {
+          border: 1px solid rgb(225, 72, 72);
+        }
+
+        &:valid {
+          border: 1px solid rgb(80, 202, 80);
+        }
       }
 
       textarea {
@@ -53,6 +61,14 @@
         outline: none;
         border: 1px solid $color-black;
         resize: none;
+
+        &:invalid {
+          border: 1px solid rgb(225, 72, 72);
+        }
+
+        &:valid {
+          border: 1px solid rgb(80, 202, 80);
+        }
       }
     }
   }

@@ -13,6 +13,7 @@
       <div class="form-field">
         <label for="author">Name :</label>
         <input
+        required
           type="text"
           placeholder="Enter a title"
           id="author"
@@ -22,6 +23,7 @@
       <div class="form-field">
         <label for="description">Description :</label>
         <textarea
+        required
           name="description"
           id="description"
           cols="30"
@@ -33,6 +35,8 @@
       <div class="form-field">
         <label for="email">Email :</label>
         <input
+        required
+        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
           type="text"
           id="email"
           name="email"
